@@ -1,0 +1,9 @@
+<ul>
+    <li><span>{{title}}</span></li>
+    <li><span>{{img_src}}</span></li>
+    <li><span>{{description}}</span></li>
+    <li><span>{{imdb}}</span></li>
+</ul>
+<input type="text" [(ngModel)]="searchString" name="searchtext" placeholder="Search Text" />
+<a class="Search" (click)="search()">Search</a>
+<input type="button" (click)="search()" value="Search" name="searchBtn" />
