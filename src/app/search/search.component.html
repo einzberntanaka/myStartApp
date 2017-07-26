@@ -1,9 +1,75 @@
-<ul>
-    <li><span>{{title}}</span></li>
-    <li><span>{{img_src}}</span></li>
-    <li><span>{{description}}</span></li>
-    <li><span>{{imdb}}</span></li>
-</ul>
-<input type="text" [(ngModel)]="searchString" name="searchtext" placeholder="Search Text" />
-<a class="Search" (click)="search()">Search</a>
-<input type="button" (click)="search()" value="Search" name="searchBtn" />
+<div class="search-main">
+    <!--<span class="brand-text">Search your movie</span>-->
+    <form class="form-inline col-sm-12 search-form">
+        <div class="col-sm-8">
+            <ng2-completer class=" completer-input"
+            [(ngModel)]="searchString"
+            [ngModelOptions]="{standalone: true}"
+            [datasource]="movieLists"
+            [minSearchLength]="0"
+            (input)="onChange()"
+            (selected)="onItemSelect($event)"
+            >
+            </ng2-completer>
+        </div>
+
+        <!--<input class="form-control col-sm-8" type="text" [(ngModel)]="searchString" name="searchtext" placeholder="Text to search movie">-->
+        <button class="btn btn-outline-success  col-sm-3" type="submit" (click)="search()" value="Search" name="searchBtn">Search</button>
+    </form>
+</div>
+
+<div class="movie-detail">
+        <div *ngIf="enable" class="content-container">
+        <div class="img-container" [ngStyle]="{'background-image': 'url(' + img_bg + ')'}"></div>
+        <div class="blur"></div>
+            <div class="movie-info">
+                <div class="row">
+                    <div class="col-sm-4 movie-img" >
+                         <img class="img-fluid" [src]="img_src" />
+                    </div>
+                   
+                    <div class="col-sm-7">
+                        <div class="movie-content">
+                            <table class="table table-user-information">
+                                <tbody>
+                                <tr>
+                                    <td style='text-transform: uppercase;'>Title:</td>
+                                    <td style='color:chartreuse; font-weight: bold;'>{{title}}</td>
+                                </tr>
+                                <tr>
+                                    <td style='text-transform: uppercase;'>Description:</td>
+                                    <td>{{description}}</td>
+                                </tr>
+                                <tr>
+                                    <td style='text-transform: uppercase;'>Release Date:</td>
+                                    <td>{{release_date}}</td>
+                                </tr>
+                                <tr>
+                                    <td style='text-transform: uppercase;'>Genres:</td>
+                                    <td><span *ngFor="let item of genres" class="genres-item">{{item}}</span></td>
+                                </tr>
+                                <tr>
+                                    <td style='text-transform: uppercase;'>IMDB:</td>
+                                    <td style='color:darkorange'>[{{imdb}}] 
+                                        <br/>
+                                        <rating [(ngModel)]="imdb"
+                                            [max]="10"
+                                            [readonly]="true"
+                                            [titles]="['one', 'two', 'three', 'four', 'five']">
+                                        </rating>
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+</div>
+
+<top-movie *ngIf="!enable"></top-movie>
+
+  

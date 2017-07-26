@@ -1,1 +1,184 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url('./assets/images/background2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff !important;
+    
+}
+.search-main, .movie-detail{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.search-main {
+    margin-top: 80px;
+}
+.movie-detail {
+    margin-top: 20px;
+}
+.brand-text{
+    margin-top: 20px;
+    font-size: 30px;
+    color: #fff;
+
+}
+.search-form{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+body,
+html {
+  margin: 0;
+}
+
+.img-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-filter: blur(70px);
+  -o-filter: blur(70px);
+  filter: blur(70px);
+  filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='70');
+  background-size: cover;
+}
+
+.content-container {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.blur {
+  /* All the background image supports */
+  background-image: -webkit-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+  background-image: -moz-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+  background-image: -o-linear-gradient(bottom left, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+  background-image: linear-gradient(to top right, rgba(43, 40, 50, 0.8) 0%, rgba(83, 86, 99, 0.8) 45%, rgba(69, 77, 91, 0.6) 60%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(50px);
+  -o-filter: blur(50px);
+  filter: blur(50px);
+  filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='70');
+  top: -70px;
+  right: -70px;
+  left: -70px;
+  padding: 70px;
+}
+
+.blur:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1001;
+  background-image: -webkit-linear-gradient(339deg, rgba(43, 40, 50, 0.8) 0%, rgba(43, 40, 50, 0.4) 46%, rgba(0, 0, 0, 0.05) 50%);
+  background-image: -moz-linear-gradient(339deg, rgba(43, 40, 50, 0.8) 0%, rgba(43, 40, 50, 0.4) 46%, rgba(0, 0, 0, 0.05) 50%);
+  background-image: -o-linear-gradient(339deg, rgba(43, 40, 50, 0.8) 0%, rgba(43, 40, 50, 0.4) 46%, rgba(0, 0, 0, 0.05) 50%);
+  background-image: linear-gradient(339deg, rgba(43, 40, 50, 0.8) 0%, rgba(43, 40, 50, 0.4) 46%, rgba(0, 0, 0, 0.05) 50%);
+  -webkit-filter: blur(70px);
+  -o-filter: blur(70px);
+  filter: progid: DXImageTransform.Microsoft.Blur(PixelRadius='70');
+  filter: blur(70px);
+}
+
+.movie-info {
+    z-index: 9999;
+    position: absolute;
+}
+.movie-img, .movie-content{
+    margin: 20px;
+}
+.completer-input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.completer-dropdown{
+    width: 100% !important;
+    top:36px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.completer-row {
+        color: #000000;
+        margin-bottom: 4px;
+        clear: both;
+        display: inline-block;
+        width: 100% !important;
+}
+.completer-group{
+    width: 100%;
+}
+/*.completer-dropdown {
+        border-color: #ececec;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 2px;
+        width: 250px;
+        padding: 6px;
+        cursor: pointer;
+        z-index: 9999;
+        position: absolute;
+        margin-top: -6px;
+        background-color: #ffffff;
+    }
+*/
+.completer-row {
+    color: #000000;
+    margin-bottom: 4px;
+    clear: both;
+    display: inline-block;
+    width: 100% !important;
+}
+
+/*.completer-selected-row{
+    background-color: lightblue;
+    color: #ffffff;
+}
+
+.completer-description {
+    font-size: 14px;
+}
+
+.completer-image-default {
+    width: 16px;
+    height: 16px;
+}
+
+.completer-image-holder {
+    float: left;
+    width: 10%;
+}
+.completer-item-text-image {
+    float: right;
+    width: 90%;
+}*/
+.genres-item {
+    font-size: 12px;
+    border: 1px solid;
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ffd993;
+}
