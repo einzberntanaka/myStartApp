@@ -9,3 +9,7 @@
 .movie-item a{
     color: #fff;
 }
+.top-movie{
+    margin-top: 20px;
+    border-radius: 10px;
+}

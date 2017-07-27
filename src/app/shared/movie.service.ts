@@ -10,6 +10,9 @@ export class MovieService {
     }
 
     search(searchString: string){
+        if(searchString==''){
+            searchString='*'
+        }
         return this.http.get(`https://api.themoviedb.org/3/search/movie?api_key=29376cbf5278c925ae56e7b3d311765a&query=${searchString}`)
             .map((res:Response) => res.json());
     }
